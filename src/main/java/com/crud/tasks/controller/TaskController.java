@@ -22,8 +22,8 @@ public class TaskController {
         return new TaskDto(1L,"test title","test_content");
     }
 
-    @RequestMapping(method = RequestMethod.DELETE,value = "delateTask")
-    public void delateTask(Long taskId){
+    @RequestMapping(method = RequestMethod.DELETE,value = "deleteTask")
+    public void deleteTask(Long taskId){
 
     }
 
