@@ -17,4 +17,14 @@ public class DbService {
         return  repository.findAll();
 
     }
+
+    @Autowired
+
+    public List<Task> getOneTask() {
+        return  repository.findOne();
+
+    }
+
+
+
 }
