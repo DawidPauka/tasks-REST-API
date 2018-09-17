@@ -8,23 +8,17 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-
 public class DbService {
     @Autowired
     private TaskRepository repository;
 
     public List<Task> getAllTasks() {
-        return  repository.findAll();
-
+        return repository.findAll();
     }
-
-    @Autowired
 
     public List<Task> getOneTask() {
-        return  repository.findOne();
-
+        return repository.findById();
     }
-
 
 
 }
