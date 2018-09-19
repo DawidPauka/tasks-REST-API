@@ -6,6 +6,7 @@ import com.crud.tasks.service.DbService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -39,8 +40,11 @@ public class TaskController {
     }
 
     @RequestMapping(method = RequestMethod.DELETE, value = "deleteTask")
-    public void deleteTask(Long taskId) {
-
+    public void deleteTask(@RequestParam Long taskId)   {
+        if (service.getOneTask(taskId).isPresent())
+            service.deleteTask(taskId);
+        else
+            System.out.println("Error");
     }
 
     @RequestMapping(method = RequestMethod.PUT, value = "updateTask")
@@ -52,8 +56,5 @@ public class TaskController {
     public void createTask(TaskDto task) {
 
     }
-    @RequestMapping(method = RequestMethod.DELETE, value = "deleteTasks")
-    public void deleteTasks(Long taskId){
 
-    }
 }
