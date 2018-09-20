@@ -12,7 +12,7 @@ public interface TaskRepository extends CrudRepository<Task, Long> {
     @Override
     List<Task> findAll();
 
-    Optional<Task> findById(long id);
+    Optional<Task> findById(Long id);
 
     @Override
     Task save(Task task);
@@ -20,5 +20,5 @@ public interface TaskRepository extends CrudRepository<Task, Long> {
     @Override
     void delete(Task task);
 
-    void deleteById(long id);
+    void deleteById(Long id);
 }
