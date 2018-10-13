@@ -16,6 +16,7 @@ import static org.springframework.util.MimeTypeUtils.APPLICATION_JSON_VALUE;
 public class TaskController {
     @Autowired
     private DbService service;
+
     @Autowired
     private TaskMapper taskMapper;
 
